@@ -1,13 +1,12 @@
-import logo from './logo.svg';
 import './App.scss';
+import { StrictMode } from 'react';
+import News from './components/news';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-
-      </header>
-    </div>
+    <StrictMode>
+      <News></News>
+    </StrictMode>
   );
 }
 
