@@ -1,12 +1,11 @@
 import './App.scss';
-import { StrictMode } from 'react';
 import News from './components/news';
 
 function App() {
   return (
-    <StrictMode>
+    <div className="App">
       <News></News>
-    </StrictMode>
+    </div>
   );
 }
 

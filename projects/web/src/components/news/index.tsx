@@ -39,10 +39,15 @@ class News extends React.Component<NewsProps, NewsState> {
   };
 
   render() {
+    const {news, modalVisible, selectedNews} = this.state;
     return (
-      <div>
-        <div className="row">
-          {this.state.news.map((news: NewsType, index) => {
+      <div className="news-container">
+        <div className="news-header">
+          <span className="news-title">NEWS</span>
+          <span className="news-subtitle">Tech and science related news from The New York Times</span>
+        </div>
+        <div className="row news-body">
+          {news.map((news: NewsType, index) => {
             return (
               <div className="col-sm-12 col-md-6 col-lg-3">
                 <NewsItem key={index} news={news} selectNews={this.selectNews}></NewsItem>
@@ -51,9 +56,9 @@ class News extends React.Component<NewsProps, NewsState> {
           })}        
         </div>
         <NewsModal
-          visible={this.state.modalVisible}
+          visible={modalVisible}
           handleModalHide={this.unselectNews}
-          selectedNews={this.state.selectedNews}
+          selectedNews={selectedNews}
         ></NewsModal>
       </div>
     );

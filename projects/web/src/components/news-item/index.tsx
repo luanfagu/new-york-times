@@ -10,10 +10,10 @@ class NewsItem extends React.Component<NewsItemProps, {}> {
     render() { 
         const {selectNews, news} = this.props;
         return ( 
-            <div onClick={() => selectNews(news)} className="card card-style" style={{width: '18rem'}}>
+            <div onClick={() => selectNews(news)} className="card card-style">
                 <img src={news?.multimedia[0]?.url} className="card-img-top" role="img" alt=""/>
                 <div className="card-body">
-                    <h5 className="card-title">{news.title}</h5>
+                    <h6 className="card-title">{news.title}</h6>
                 </div>
             </div>
          );

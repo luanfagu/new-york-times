@@ -1,0 +1,25 @@
+.news-container{
+    margin: 3rem;
+
+    .news-header{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+        line-height: 1;
+
+        .news-title{
+            font-family: 'Ancient';
+            font-size: 5rem;
+        }
+    
+        .news-subtitle{
+            font-size: 1.3rem;
+        }
+    }
+
+    .news-body{
+        padding: 2rem;
+        width: 80rem;
+    }
+}
