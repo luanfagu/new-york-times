@@ -1,6 +1,6 @@
 # new-york-times
 
-## Conteudo
+## Conteúdo
 1. [Descrição](#descricao)
 2. [Desenvolvimento](#desenvolvimento)
     1. [Utilizacao de bibliotecas](#libs)
@@ -8,6 +8,7 @@
 4. [Execução da aplicação](#execucaoapp)
     1. [Instalação](#instalacao)
     2. [Execução](#execucao)
+    2. [Testes](#execucaotestes)
 
 ## Descrição <a name="descricao"></a>
 
@@ -72,28 +73,18 @@ yarn application:yarn
 npm run application:npm
 ```
 
-Caso deseje executar os projetos separamente foram criados os comandos:
+Caso deseje executar os projetos separamente foram criados para isso, basta olhar no arquivo **package.json** na pasta principal para ter acesso a todos. 
 
-**API:**
+### Testes <a name="execucaotestes"></a>
+
+Para os testes unitarios foram criados comandos utilizando encademento.
 
 **Yarn:**
 ```
-yarn api:yarn
+yarn application:test:yarn
 ```
 
 **NPM:**
 ```
-npm run api:npm
-```
-
-**Web:**
-
-**Yarn:**
-```
-yarn web:yarn
-```
-
-**NPM:**
-```
-npm run web:npm
+npm run application:test:npm
 ```
