@@ -1,0 +1,19 @@
+{
+    "scripts": {
+        "installer:yarn": "yarn && yarn --cwd ./projects/web && yarn --cwd ./projects/api",
+        "installer:npm": "npm install && npm --prefix ./projects/web install ./projects/web && npm --prefix ./projects/api install ./projects/api",
+        "application:yarn": "concurrently \"yarn --cwd ./projects/api dev\" \"yarn --cwd ./projects/web start\"",
+        "application:npm": "concurrently \"npm --prefix ./projects/api run dev\" \"npm --prefix ./projects/web run start\"",
+        "api:yarn": "yarn --cwd ./projects/api dev",
+        "api:npm": "npm --prefix ./projects/api run dev",
+        "web:yarn": "yarn --cwd ./projects/web start",
+        "web:npm": "npm --prefix ./projects/web run start",
+        "api:tests:yarn": "yarn --cwd ./projects/api test",
+        "api:tests:npm": "npm --prefix ./projects/api run test",
+        "web:tests:yarn": "yarn --cwd ./projects/web test",
+        "web:tests:npm": "npm --prefix ./projects/web run test"
+    },
+    "dependencies": {
+        "concurrently": "^6.0.0"
+    }
+}

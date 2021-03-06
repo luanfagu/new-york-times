@@ -21,7 +21,7 @@ class NewsModal extends React.Component<NewsModalProps, {}> {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button href={selectedNews?.url} target="blank" variant="primary" role="btn">Read more...</Button>
+          <Button href={selectedNews?.url} target="blank" variant="info" role="btn">Read more...</Button>
         </Modal.Footer>
       </Modal>
     );
