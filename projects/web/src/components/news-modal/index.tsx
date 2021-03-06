@@ -4,36 +4,24 @@ import { NewsType } from "../../types/news";
 
 export interface NewsModalProps {
   visible: boolean;
-  activeNews: NewsType | undefined;
+  selectedNews: NewsType | undefined;
   handleModalHide: Function;
 }
-
-export interface NewsModalState {
-  visible: boolean;
-}
-
-class NewsModal extends React.Component<NewsModalProps, NewsModalState> {
-  constructor(props: NewsModalProps) {
-    super(props);
-    this.state = { visible: false };
-  }
-
-
-
+class NewsModal extends React.Component<NewsModalProps, {}> {
   render() {
+    const {visible, handleModalHide, selectedNews} = this.props;
     return (
-      <Modal show={ this.state.visible } onHide={this.props.handleModalHide}>
+      <Modal show={ visible } onHide={handleModalHide}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>{selectedNews?.title}</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
-          <p>Modal body text goes here.</p>
+          <p>{selectedNews?.abstract}</p>
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary">Close</Button>
-          <Button variant="primary">Save changes</Button>
+          <Button href={selectedNews?.url} variant="primary" role="btn">Read more...</Button>
         </Modal.Footer>
       </Modal>
     );
@@ -41,24 +29,3 @@ class NewsModal extends React.Component<NewsModalProps, NewsModalState> {
 }
 
 export default NewsModal;
-
-// function NewsModal() {
-//   return (
-//     <Modal.Dialog>
-//       <Modal.Header closeButton>
-//         <Modal.Title>Modal title</Modal.Title>
-//       </Modal.Header>
-
-//       <Modal.Body>
-//         <p>Modal body text goes here.</p>
-//       </Modal.Body>
-
-//       <Modal.Footer>
-//         <Button variant="secondary">Close</Button>
-//         <Button variant="primary">Save changes</Button>
-//       </Modal.Footer>
-//     </Modal.Dialog>
-//   );
-// }
-
-// export default NewsModal;
