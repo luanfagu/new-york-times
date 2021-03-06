@@ -1,16 +1,18 @@
 import {Router, Request, Response} from 'express';
 import axios from 'axios';
+import HttpClient from '../../services/http-client';
+import { NytApiResponse } from '../../types/nyt-api-response';
 
 const newsRoutes = Router();
 
 newsRoutes.get('/', async (req, res) => {
-    const { data: techNews } = await axios.get('https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=18jx8G9r3egCQHORFwN4aWvVp18h8adg')
-    const { data: scienceNews } = await axios.get('https://api.nytimes.com/svc/topstories/v2/science.json?api-key=18jx8G9r3egCQHORFwN4aWvVp18h8adg')
+    const techNews = (await HttpClient.get<NytApiResponse>('/technology.json')).results;
+    const scienceNews = (await HttpClient.get<NytApiResponse>('/science.json')).results;
 
-    return res.json({news: [
-        ...techNews.results,
-        ...scienceNews.results
-    ]});
+    return res.json([
+        ...techNews,
+        ...scienceNews
+    ]);
 });
 
 export default newsRoutes;
