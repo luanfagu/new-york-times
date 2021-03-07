@@ -7,7 +7,6 @@ describe('<NewsItem/>', () => {
     const fakeNews: NewsType = {
         abstract:
           "fake news description",
-        section: "technology",
         multimedia: [
           {
             url:
