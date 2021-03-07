@@ -14,8 +14,8 @@
         "web:yarn": "yarn --cwd ./projects/web start",
         "web:npm": "npm --prefix ./projects/web run start",
 
-        "api:tests:yarn": "yarn --cwd ./projects/api test",
-        "api:tests:npm": "npm --prefix ./projects/api run test"
+        "web:tests:yarn": "yarn --cwd ./projects/web test",
+        "web:tests:npm": "npm --prefix ./projects/web run test"
     },
     "dependencies": {
         "concurrently": "^6.0.0"
