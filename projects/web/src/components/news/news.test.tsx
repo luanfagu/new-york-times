@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 import News from ".";
@@ -42,4 +42,14 @@ describe('<News/>', () => {
         expect(await screen.findByText('fake news title')).toBeInTheDocument();
         expect(await screen.findByText('fake news title 2')).toBeInTheDocument();
       });
+
+      it('should open the modal correctly', async () => {
+        render(<News/>,)
+        
+        axiosMock.onGet('/news').reply(200, fakeNews);
+
+        fireEvent.click(await screen.findByText('fake news title'))
+
+        expect(await screen.findByText('fake news description')).toBeInTheDocument();
+      })
 });

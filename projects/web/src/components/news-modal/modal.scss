@@ -1,0 +1,19 @@
+.modal-dialog{
+    width: 35.625rem;
+    max-width: 35.625rem;
+
+    .modal-body{
+        display:flex;
+        flex-direction: row;
+        font-size: 1.3rem;
+    
+        .modal-img {
+            object-fit: cover;    
+            width: 10rem;
+            height: 10rem;
+
+            margin-right: 1rem;
+            border-radius: 0.25rem;
+        }
+    }
+}

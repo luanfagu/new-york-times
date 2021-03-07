@@ -1,4 +1,4 @@
-type Multimedia = {
+export type Multimedia = {
     url: string;
     format: string;
     height: number;
@@ -9,7 +9,7 @@ type Multimedia = {
     copyright: string;
 }
 
-type Result = {
+export type Result = {
     section: string;
     subsection: string;
     title: string;
@@ -31,7 +31,7 @@ type Result = {
     short_url: string;
 }
 
-type NytApiResponse = {
+export type NytApiResponse = {
     status: string;
     copyright: string;
     section: string;
@@ -39,5 +39,3 @@ type NytApiResponse = {
     num_results: number;
     results: Result[];
 }
-
-export type {NytApiResponse}

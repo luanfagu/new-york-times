@@ -49,8 +49,8 @@ class News extends React.Component<NewsProps, NewsState> {
         <div className="row news-body">
           {news.map((news: NewsType, index) => {
             return (
-              <div className="col-sm-12 col-md-6 col-lg-3">
-                <NewsItem key={index} news={news} selectNews={this.selectNews}></NewsItem>
+              <div key={index} className="col-sm-12 col-md-6 col-lg-3">
+                <NewsItem news={news} selectNews={this.selectNews}></NewsItem>
               </div>
             )
           })}        

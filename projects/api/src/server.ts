@@ -5,12 +5,14 @@ import cors from 'cors';
 require('dotenv').config()
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT;
 
 app.use(cors());
 
 app.use(routes);
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
     return console.log(`The server is listening on port: ${port}`)
 })
+
+export { server };
