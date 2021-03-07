@@ -13,7 +13,7 @@
 ## Descrição <a name="descricao"></a>
 
 Este projeto foi desenvolvido com o intuito de consumir a API disponibilizada pelo site de notícias The New York Times e
-apresentar estas noticias 
+apresentar as noticias das categorias **technology** e **science**.
 
 ## O Desenvolvimento <a name="desenvolvimento"></a>
 
@@ -35,11 +35,11 @@ Além das bibliotecas padrões foram utilizadas diversas bibliotecas para auxili
 
 ### Testes <a name="testes"></a>
 
-Para os testes foram utilizados somente testes unitarios, para realizar a testagem do comportamento dos componentes.
+Para os testes foram utilizados somente testes unitarios, para realizar a testagem da renderização e do comportamento dos componentes.
 
-Todos os testes, tanto no projeto web quanto no projeto api foram feitos utilizando a biblioteca Jest.
+Os testes foram implementados somente no frontend da aplicação, pois, não vi necessidade de aplica-los no backend por ser somente utilizado como "proxy" da requisição e não realizar nenhuma manipulação de dados.
 
-Optei por não desenvolver testes e2e devido ao curto tempo disponível para o desenvolvimento do projeto.
+Não foram desenvolvidos testes end-to-end por a aplicação depender de uma API externa, e caso fossem "mockados" os dados da api feita em node a confiabilidade dos testes seria comprometida.
 
 ## Execução da aplicação <a name="execucaoapp"></a>
 
@@ -81,10 +81,10 @@ Para os testes unitarios foram criados comandos utilizando encademento.
 
 **Yarn:**
 ```
-yarn application:test:yarn
+yarn web:tests:yarn
 ```
 
 **NPM:**
 ```
-npm run application:test:npm
+npm run web:tests:npm
 ```
