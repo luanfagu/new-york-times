@@ -10,8 +10,6 @@
         "web:yarn": "yarn --cwd ./projects/web start",
         "web:npm": "npm --prefix ./projects/web run start",
 
-        "application:test:yarn": "yarn --cwd ./projects/api test && yarn --cwd ./projects/web test",
-        "application:test:npm": "npm --prefix ./projects/api run test && npm --prefix ./projects/web run test",
         "api:tests:yarn": "yarn --cwd ./projects/api test",
         "api:tests:npm": "npm --prefix ./projects/api run test",
         "web:tests:yarn": "yarn --cwd ./projects/web test",
