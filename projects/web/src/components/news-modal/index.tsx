@@ -14,12 +14,12 @@ class NewsModal extends React.Component<NewsModalProps, {}> {
     const {visible, handleModalHide, selectedNews} = this.props;
     return (
       <Modal show={ visible } onHide={handleModalHide} dialogClassName="modal-dialog">
-        <Modal.Header closeButton>
+        <Modal.Header closeButton closeLabel="Close">
           <Modal.Title>{selectedNews?.title}</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
-          <img src={selectedNews?.multimedia[0]?.url} className="modal-img" role="img" alt=""/>
+          <img src={selectedNews?.multimedia[0]?.url} className="modal-img" role="img-modal" alt=""/>
           <p>{selectedNews?.abstract}</p>
         </Modal.Body>
 

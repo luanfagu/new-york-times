@@ -43,7 +43,7 @@ describe('<News/>', () => {
         expect(await screen.findByText('fake news title 2')).toBeInTheDocument();
       });
 
-      it('should open the modal correctly', async () => {
+      it('should open and close the modal correctly', async () => {
         render(<News/>,)
         
         axiosMock.onGet('/news').reply(200, fakeNews);
@@ -51,5 +51,9 @@ describe('<News/>', () => {
         fireEvent.click(await screen.findByText('fake news title'))
 
         expect(await screen.findByText('fake news description')).toBeInTheDocument();
+
+        fireEvent.click(await screen.findByText('Close'))
+
+        expect(await screen.queryByText('fake news description')).not.toBeInTheDocument();
       })
 });

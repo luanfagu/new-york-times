@@ -23,6 +23,7 @@ describe('<NewsModal/>', () => {
         
         expect(screen.getByText('fake news title')).toBeInTheDocument();
         expect(screen.getByText('fake news description')).toBeInTheDocument();
+        expect(screen.getByRole('img-modal')).toHaveAttribute('src', 'fakenewsimage.png');
         expect(screen.getByRole('btn')).toHaveAttribute('href', 'fakenewspage.com');
       });
 });
